@@ -1,0 +1,23 @@
+p {
+  box-sizing: inherit;
+  background-image: url(https://raw.githubusercontent.com/greenfox-velox/velox-syllabus/master/week-01/4-html-css/duck.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 18px;
+  width: 230px;
+  border: solid 2px;
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 10px;
+}
+
+body {
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+#first {
+  background-position: center left;
+}
+ #last {
+ background-position: bottom right;
+ }
