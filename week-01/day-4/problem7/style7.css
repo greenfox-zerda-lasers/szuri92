@@ -1,0 +1,17 @@
+p {
+  font-size: 18px;
+  width: 360px;
+  border-style: solid;
+  border-top-style: hidden;
+  border-width: 2px;
+  padding: 20px 20px 20px 20px;
+  margin: 0px 0px 0px 0px;
+}
+
+body {
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+ #last {
+   border-bottom-style: hidden;
+ }
