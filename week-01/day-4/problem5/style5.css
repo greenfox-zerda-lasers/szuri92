@@ -1,0 +1,33 @@
+h1 {
+  color: blue;
+}
+
+h2 {
+  color: rgb(255,170, 35);
+
+}
+body {
+  margin-left: 40px;
+}
+
+
+
+
+.main {
+  color: rgb(30,0,240);
+  list-style-type: square;
+}
+
+.fruits {
+color: black;
+list-style-type: disc;
+
+}
+
+#apple {
+  color: rgb(210,0,40);
+}
+
+ol {
+  color: black;
+}
