@@ -1,4 +1,4 @@
-p {
+p{
   font-size: 18px;
   width: 360px;
   border-style: solid;
@@ -6,6 +6,7 @@ p {
   border-width: 2px;
   padding: 20px 20px 20px 20px;
   margin: 0px 0px 0px 0px;
+
 }
 
 body {
@@ -15,3 +16,6 @@ body {
  #last {
    border-bottom-style: hidden;
  }
+p:hover{
+  background-color:#ec6842;
+}
