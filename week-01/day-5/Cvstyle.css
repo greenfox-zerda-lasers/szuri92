@@ -1,0 +1,24 @@
+#Nameplate {
+
+box-sizing: inherit;
+background-image: url(https://raw.githubusercontent.com/greenfox-velox/velox-syllabus/master/week-01/5-cv/project/anakin.png);
+color: rgb(34,34,34);
+margin: -8px 25px 0px 25px;
+background-size: cover;
+border-top: solid 4px rgb(34,34,34);
+height: 190px;
+font-family: 'Abril Fatface', cursive;
+padding-top: 240px;
+padding-left: 300px;
+}
+
+#Nameplate h1 {
+  font-size: 70px;
+  margin-top: -80px;
+  
+}
+
+#Nameplate h2 {
+  font-size: 35px;
+  margin-bottom: 55px;
+}
