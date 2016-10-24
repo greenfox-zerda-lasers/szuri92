@@ -1,0 +1,13 @@
+section {
+  max-width: 250px;
+  border-bottom: solid 2px #000;
+  text-align: justify;
+}
+
+.duck-left img {
+  float: left;
+
+}
+ .duck-right img {
+  float: right;
+ }
