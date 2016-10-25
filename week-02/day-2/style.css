@@ -1,34 +1,224 @@
 
 body {
-  font-family: arial;
+font-family: 'Proza Libre', sans-serif;
 }
 
 main {
-  display flex;
-  justify-content: space-around;
-  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  width: 700px;
+  margin: 0 auto;
+  justify-content: space-around;;
+  padding: 60px;
 }
 
-form
- {
+h1{
+  color:#4a4261;
+  display: block;
+  position: relative;
+  top: 60px;
+  left: 70px;
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+form {
    box-sizing: border-box;
    background-color: #DCD6CD;
-   width: 800px;
-   padding: 20px;
-   display: flex;
-   justify-content: space-around;
+   width: 700px;
+   margin: 30px auto;
+   padding-bottom: 20px;
 }
 
 span {
   color: red;
+  font-size: 0.8em;
 }
 
 .born {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+.year {
+  width: 60%;
+}
+
+.personal, .connect {
+  box-sizing: border-box;
+  width: 47%;
+  margin: 0;
+  padding: 0;
 }
 
 .brands {
   display: flex;
   justify-content: space-between;
+  width: 80%
+}
+
+select:required:invalid {
+  color: gray;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+option {
+  color: black;
+}
+
+textarea {
+  width: 80%;
+  height: 150px;
+  border-radius: 2px;
+}
+
+p {
+  color: #4a4261;
+  font-weight: bolder;
+  margin-bottom: 0.2em;
+  font-size: 14px;
+}
+
+h2 {
+  color: white;
+  font-weight: 100;
+  font-size: 18px;
+  background-color: #938C97;
+  line-height: 2em;
+  box-sizing: border-box;
+  padding-left: 10px;
+  border-radius: 3px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+input[type="text"], input[type="number"],
+input[type="email"], input[type="url"], input[type="telephone"],
+select  {
+  box-sizing: border-box;
+  width: 100%;
+  height: 35px;
+  padding: 0.5em;
+  border-color: #938C97;
+  border-width: 0.5px;
+  border-radius: 3px;
+  box-shadow: 0px rgba(0,0,0,0.75);
+}
+
+input[type="number"] {
+  box-sizing:border-box;
+  width: 50%
+}
+
+.foot {
+  font-weight: normal;
+  font-size: 0.9em;
+  color: #A5a19d;
+  position: relative;
+  top: 15px;
+}
+
+label {
+  color: #4a4261;
+  font-family: sans-serif;
+}
+
+.introduce {
+  box-sizing: content-box;
+  margin: 0 60px auto;
+  width: 710px;
+}
+
+.buttons, .save-or-delete {
+  margin: 0 60px auto;
+}
+
+.save-or-delete {
+  display: flex;
+  justify-content: space-between;
+  margin:  50px 0;
+}
+
+input[value="File Kivalasztasa"]
+ {
+   text-transform: uppercase;
+   color: #4a4261;
+   padding: 01em 3em;
+   font-size: 12px;
+   font-weight: bolder;
+  }
+
+label[for="rules"] {
+font-size: 14px;
+font-family: 'Proza Libre', sans-serif;
+color: #4a4261;
+}
+
+a{
+color: grey;
+}
+
+input[value="Mentes"] {
+background-color: #4a4261;
+color: white;
+padding: 1em 5em;
+text-transform: uppercase;
+border-radius: 5px;
+box-shadow: 0 2 10 1 rgba(0,0,0,0.75);
+background:radial-gradient(ellipse at center, rgba(70,62,92,0.95) 0%, rgba(0,0,0,1) 100%);;
+}
+
+input[value="urlap torlese"]{
+  color: #4a4261;
+  text-transform: uppercase;
+  font-size: 11px;
+  padding: 1em 3em;
+  font-weight: bold;
+
+}
+
+.asd {
+  margin: 30px 0px;
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+input[type="checkbox"] + label span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor:pointer;
+  border: 1px solid #4a4261;
+}
+
+input[type="checkbox"]:checked + label span {
+  background-color: #4a4261;
+
+}
+
+input[type="radio"]{
+  display: none;
+}
+
+input[type="radio"] + label span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor:pointer;
+  border: 1px solid #4a4261;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked + label span {
+  background-color: #4a4261;
 }

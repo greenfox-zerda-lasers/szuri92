@@ -2,10 +2,14 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
+
   </head>
 
   <body>
-      <form>
+    <form>
+      <h1>Profil</h1>
+      <main>
         <section class="personal">
           <h2>Szemelyes adatok</h2>
           <p>Nev <span>*</span></p>
@@ -13,60 +17,78 @@
           <div class="born">
             <div class="year">
               <p>Szuletesi eved</p>
-              <input type="number">
+              <input type="number" placeholder="pl. 1984">
               </div>
             <div class="gender">
               <p>Nemed</p>
               <input type="radio" id="Ferfi"  name="gender">
-              <label for"Ferfi">Ferfi</label>
+              <label for"Ferfi"><span></span>Ferfi</label>
               <input type="radio" id="No" name="gender">
-              <label for"No">No</label>
+              <label for"No"><span></span>No</label>
             </div>
           </div>
             <p>Milyen markakat szeretsz?</p>
             <div class="brands">
               <div class="wrap1">
                 <input type="checkbox" id="adidas">
-                <label for="adidas">Adidas</label><br>
+                <label for="adidas"><span></span>Adidas</label><br>
                 <input type="checkbox" id="apple">
-                <label for="apple">Apple</label><br>
+                <label for="apple"><span></span>Apple</label><br>
                 <input type="checkbox" id="coke">
-                <label for="coke">Coca-Cola</label><br>
+                <label for="coke"><span></span>Coca-Cola</label><br>
                 <input type="checkbox" id="mazda">
-                <label for="mazda">Mazda</label><br>
+                <label for="mazda"><span></span>Mazda</label><br>
                 <input type="checkbox" id="nike">
-                <label for="nike">Nike</label>
+                <label for="nike"><span></span>Nike</label>
               </div>
               <div class="wrap2">
               <input type="checkbox" id="opel">
-              <label for="opel">Opel</label><br>
+              <label for="opel"><span></span>Opel</label><br>
               <input type="checkbox" id="ray">
-              <label for="ray">Ray-Ban</label><br>
+              <label for="ray"><span></span>Ray-Ban</label><br>
               <input type="checkbox" id="sbuck">
-              <label for="sbuck">Starbucks</label><br>
+              <label for="sbuck"><span></span>Starbucks</label><br>
               <input type="checkbox" id="tesla">
-              <label for="tesla">Tesla</label><br>
+              <label for="tesla"><span></span>Tesla</label><br>
               <input type="checkbox" id="yahoo">
-              <label for="yahoo">Yahoo</label>
+              <label for="yahoo"><span></span>Yahoo</label>
             </div>
           </div>
+          <p class="foot">Tobbet is valaszthatsz!</p>
         </section>
-        <section class="connection">
+        <section class="connect">
           <h2>Kapcsolat</h2>
           <p>Telefonszam <span>*</span></p>
-          <input type="telphone" placeholder="+36 --- --- ---">
+          <input type="telephone" placeholder="+36 - -  - - -  - - -">
+          <p>E-mail cim <span>*</span></p>
+          <input type="email" placeholder="nev@domain.hu">
+          <p>Facebook Profilod</p>
+          <input type="url" placeholder="http://facbook.com/..">
+          <p>Twitter profilod</p>
+          <input type="url" placeholder="http://twitter.com/..">
+          <p>Milyen hazban laksz?</p>
+          <select required>
+            <option value="" disabled selected>Valassz tipust</option>
+            <option value="1">Csaladi haz</option>
+            <option value="2">Panel</option>
+          </select>
         </section>
-
-
-
-
-
-
-      </form>
-
-
-  </body>
-
-
-
+      </main>
+        <section class ="introduce">
+          <p>Bemutatkozas <span>*</span></p>
+          <textarea placeholder="Irj magadrol par mondatot"></textarea>
+        </section>
+        <section class="buttons">
+          <p>Cv feltoltese</p>
+          <input type="button" value="File Kivalasztasa"><br>
+          <div class="asd">
+            <input type="checkbox" id="rules">
+            <label for="rules"><span></span>Elfogadom a <a href="">felhasznalasi felteteleket</a></label>
+          </div>
+          <section class="save-or-delete">
+          <input  type="button" value="Mentes">
+          <input type ="submit" value="urlap torlese">
+        </section>
+    </form>
+</body>
 </html>
