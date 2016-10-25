@@ -1,0 +1,34 @@
+
+body {
+  font-family: arial;
+}
+
+main {
+  display flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+form
+ {
+   box-sizing: border-box;
+   background-color: #DCD6CD;
+   width: 800px;
+   padding: 20px;
+   display: flex;
+   justify-content: space-around;
+}
+
+span {
+  color: red;
+}
+
+.born {
+  display: flex;
+  justify-content: space-around;
+}
+
+.brands {
+  display: flex;
+  justify-content: space-between;
+}
