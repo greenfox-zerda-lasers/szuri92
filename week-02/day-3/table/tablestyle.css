@@ -41,6 +41,7 @@ th{
   padding-left: 25px;
   font-weight: lighter;
   color: #d4dce4;
+  border-radius: 5px 5px 0 0;
 }
 
 td, th{
@@ -70,4 +71,12 @@ tr th:nth-child(1) {
 
 tr th:nth-child(2) {
   border-right: 0px;
+}
+
+tbody tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+tbody tr:last-child td:first-child{
+  border-radius: 0 0 0px 5px;
 }
