@@ -1,0 +1,55 @@
+input[type="button"]{
+  margin: 50px 5px;
+  padding: 15px 50px;
+  font-size: 26px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+#b3 {
+  background: linear-gradient(#8fcf00, #6c9d00);
+  color: white;
+  border: solid 2px #5a8200;
+  text-shadow: 0 -1px 3px #222;
+  box-shadow: 0 0 1px 1px #d5dde1;
+
+}
+
+#b2 {
+  background: linear-gradient(#00b5e5, #008eb3);
+  color: white;
+  border: solid 2px #007988;
+  text-shadow: 0 -1px 2px #222;
+  box-shadow: 0 0 1px 1px #d5dde1;
+}
+
+  #b1 {
+      background: linear-gradient(white, #e2e2e2  );
+    color: #666666;
+    border: solid 1px #d4d4d4;
+    box-shadow: 0 0 2px 1px #d2e0e8;
+    font-weight: 100;
+  }
+
+#b1:hover {
+    background: linear-gradient(#e2e2e2, #f1f1f1);
+}
+
+#b2:hover {
+  background: linear-gradient(#92e6fd, #008eb3);
+}
+
+#b3:hover {
+    background: linear-gradient(#b0ff00, #6c9d00);
+  }
+
+  #b1:active{
+    background: linear-gradient(#e2e2e2, #c1c1c1);
+}
+
+#b2:active {
+  background: linear-gradient(#92e6fd, #045e75 );
+}
+#b3:active {
+  background: linear-gradient(#b0ff00, #537505);
+}
