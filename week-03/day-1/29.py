@@ -7,3 +7,12 @@ is_bonus = False
 # and is_bonus is False decrement ab by 1
 # if is_bonus is True ab should remain the same
 
+if credits >= 50 and is_bonus == False:
+    ab -= 2
+    print(ab)
+elif credits < 50 and is_bonus == False:
+    ab -=1
+    print(ab)
+elif is_bonus == True:
+    ab=ab
+    print(ab)
