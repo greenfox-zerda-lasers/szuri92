@@ -8,3 +8,12 @@ students = [
 # then returns how many candies are own by students
 # under 10
 
+def candies(list):
+    total = 0
+    for x in range(len(list)):
+        if list[x]['age'] < 10:
+            total += list[x]['candies']
+
+    return total
+
+print(candies(students))

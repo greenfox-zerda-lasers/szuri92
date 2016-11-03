@@ -10,4 +10,11 @@ students = [
 # create a function that counts the students that
 # has more than 4 candies
 
+def diabetes(list):
+    total = 0
+    for x in range(len(list)):
+        if list[x]['candies'] > 4:
+         total +=1
+    return total
 
+print(diabetes(students))
