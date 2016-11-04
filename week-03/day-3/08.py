@@ -17,16 +17,27 @@ class Person():
 
 class Student(Person):
 
+    grades = []
+    def add_grade(self, grades):
+        self.grades.append(grades)
+        print(self.grades)
+
+    def get_average(self):
+        total = 0
+        for i in range(len(self.grades)):
+            total += self.grades[i]
+
+        average = total / len(self.grades)
+        return average
 
 
 
-
-
-
-
-
-
-
-
-laci = Student('Laci', 'Kovacs')
+laci = Person('Laci', 'Kovacs')
+belus = Student('Bela', 'Olah')
+belus.add_grade(4)
 print(laci.greet())
+print(belus.greet())
+belus.add_grade(4)
+belus.add_grade(2)
+belus.add_grade(5)
+print(belus.get_average())
