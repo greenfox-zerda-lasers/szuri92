@@ -1,34 +1,25 @@
-class DrawSquares:
-    def __init__(self, square):
-##        self.squares = squares
+from tkinter import *
+import time
+import math
+root = Tk()
 
-        self.root_window = tkinter.Tk()
+size = 400
+height = math.sqrt(size **2 - (size/2)**2)
+canvas = Canvas(root, width = 1000, height = 1000, bg='silver')
+canvas.pack()
 
-        self.canvas = tkinter.Canvas(master = self.root_window,
-                                 width = 500, height = 500,
-                                 background = 'blue')
-        self.canvas.grid(row=0, column = 0, padx=0, pady = 0,
-                     sticky = "nsew")
+def draw_poly(x, y, size, height):
+    height = math.sqrt(size **2 - (size/2)**2)
+    time.sleep(0.001)
+    canvas.create_polygon(x, y, x+size, y, x+3/2*size, y+height, x+size, y+2*height, x, y+2*height, x-0.5*size, y+height, fill='white', outline='black', width='1.5')
+    canvas.update()
+    if size > 5:
+        draw_poly(x, y, size/2, height/2)
+        draw_poly(x+3/4*size, y+1/2*height, size/2, height/2)
+        draw_poly(x, y+height, size/2, height/2)
+        #draw_poly(x, y+4/3*height, size/3, height/3)
+        #draw_poly(x+2/3*size, y+4/3*height, size/3, height/3)
+        #draw_poly(x-1/3*size, y+2/3*height, size/3, height/3)
 
-##        self.canvas.bind('<Configure>', self._resized)
-
-        self.root_window.rowconfigure(0, weight = 1)
-        self.root_window.columnconfigure(0, weight = 1)
-
-        self.draw_squares_recursively(square)
-        self.root_window.mainloop()
-
-
-    def draw_squares_recursively(self, square):
-        ##self.canvas.delete(tkinter.ALL)
-
-        for value in square:
-            if value < 0.05 or value > 100:
-                return
-
-        self.canvas.create_rectangle(square[0], square[1],
-                                     square[2], square[3],
-                                     outline = 'grey', width=2)
-        square[2] += 20
-        square[3] += 20
-        self.draw_squares_recursively(square)
+draw_poly(250, 10, size, height)
+root.mainloop()
