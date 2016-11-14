@@ -21,10 +21,13 @@ def count_letters(string):
     sorted_list= ''
     string1 = string.lower()
     for i in range(len(string1)):
-        if ord(string1[i]) in range (97, 123):
+        if ord(string1[i]) in range (97, 123) or ord(string1[i]) in range (223, 256):
             sorted_list += string1[i]
     sorted_list = Counter(sorted_list)
     if sorted_list == '':
         return {}
     else:
         return sorted_list
+
+
+print(count_letters('ßélá!'))

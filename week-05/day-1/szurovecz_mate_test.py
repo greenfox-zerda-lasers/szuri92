@@ -21,12 +21,14 @@ class TestMyFunctions(unittest.TestCase):
         self.assertEqual(count_letters(''), {})
     def test_count_for_non_letter(self):
         self.assertEqual(count_letters('be12@la!'), {'b': 1, 'a': 1, 'e' : 1, 'l': 1})
+    def test_count_for_weird_ascii(self):
+        self.assertEqual(count_letters('ßåélee'), {'ß': 1, 'å': 1, 'é': 1, 'l': 1, 'e': 2})
     def test_count_for_int(self):
         self.assertRaises(AttributeError, count_letters, 12)
     def test_count_for_list(self):
         self.assertRaises(AttributeError, count_letters, [1, 1, 2, 3, 5, 7, 'a', 'v'])
     def test_count_for_list(self):
-        self.assertRaises(AttributeError, count_letters, ['a', 'v', 'c'])      
+        self.assertRaises(AttributeError, count_letters, ['a', 'v', 'c'])
 
 
 
