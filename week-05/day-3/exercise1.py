@@ -6,8 +6,8 @@ def divide_ten(divider):
     try:
         return 10/divider
     except ZeroDivisionError:
-        print('fail')
+        return 'fail'
 
 
 
-print(divide_ten(21))
+#print(divide_ten(0))
