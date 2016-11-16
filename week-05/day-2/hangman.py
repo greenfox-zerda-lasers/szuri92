@@ -47,6 +47,20 @@ class Game:
             else:
                 self.letter_guess()
 
+    def letter_swap(self, number):
+        self.guess_list.append(number)
+        print('You already guessed: ', self.guess_list)
+        self.hidden = list(self.hidden)
+        self.word = list(self.word)
+        for i in range(len(self.word)):
+            if number == self.word[i]:
+                self.hidden[i] = self.word[i]
+                self.talalt += 1
+        if self.talalt < 1 :
+            self.player.life -= 1
+            print(texts.guessing['wrong'].format(self.player.life))
+
+
     def letter_guess(self):
         self.talalt = 0
         if self.hidden == self.word:
@@ -59,17 +73,7 @@ class Game:
             if guess in self.guess_list:
                 print(texts.game_loop['already_letter'].format(guess))
             else:
-                self.guess_list.append(guess)
-                print('You already guessed: ', self.guess_list)
-                self.hidden = list(self.hidden)
-                self.word = list(self.word)
-                for i in range(len(self.word)):
-                    if guess == self.word[i]:
-                        self.hidden[i] = self.word[i]
-                        self.talalt += 1
-                if self.talalt < 1 :
-                    self.player.life -= 1
-                    print(texts.guessing['wrong'].format(self.player.life))
+                self.letter_swap(guess)
             self.hidden = ''.join(self.hidden)
             self.word = ''.join(self.word)
 
@@ -99,6 +103,7 @@ class Game:
         elif self.player.life == 3:
             print("________      ")
             print("|      |      ")
+            print("|      0      ")
             print("|     /|      ")
             print("|             ")
             print("|             ")
@@ -118,12 +123,12 @@ class Game:
             print("|             ")
         elif self.player.life == 0:
             print ("________      ")
-            print ("|      |      ")
-            print ("|      0      ")
+            print ("|      |      GAME ")
+            print ("|      0        OVER!")
             print ("|     /|\     ")
             print ("|     / \     ")
             print ("|             ")
-            print("GAME OVER!")
+
 
 
     def restart_game(self):
@@ -136,7 +141,7 @@ class Game:
                 print('Bye then')
                 break # END OF GAME
             else:
-                print("Stupid")
+                print("Say Yes or No you fag!")
 
 
 
