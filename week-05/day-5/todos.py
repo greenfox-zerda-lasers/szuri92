@@ -34,7 +34,7 @@ class ToDoApp:
         writer.writerow(lista)
         f.close()
 
-    def read_list(self):
+    def display_list(self):
         f = self.file_opener('r')
         csv_f = csv.reader(f, delimiter = ';')
         lista = list(csv_f)
@@ -49,25 +49,31 @@ class ToDoApp:
 
     def delete(self, number):
         lista = self.csv_to_list()
-        lista.remove(lista[number-1])
-        self.csv_delete()
-        c = self.file_opener('a')
-        csv_a = csv.writer(c, delimiter =';', lineterminator = '\n')
-        for i in range(len(lista)):
-            csv_a.writerow(lista[i])
-        c.close()
+        if number in range(1, len(lista)+1):
+            lista.remove(lista[number-1])
+            self.csv_delete()
+            c = self.file_opener('a')
+            csv_a = csv.writer(c, delimiter =';', lineterminator = '\n')
+            for i in range(len(lista)):
+                csv_a.writerow(lista[i])
+            c.close()
+        else:
+            print('Unable to remove: Index is out of bound')
 
     def check_task(self, number):
         lista = self.csv_to_list()
-        self.csv_delete()
-        for i in range(len(lista)):
-            if i == number-1:
-                lista[i][0] = 'done'
-        c = self.file_opener('a')
-        csv_a = csv.writer(c, delimiter =';', lineterminator = '\n')
-        for i in range(len(lista)):
-            csv_a.writerow(lista[i])
-        c.close()
+        if number in range(1, len(lista)+1):
+            self.csv_delete()
+            for i in range(len(lista)):
+                if i == number-1:
+                    lista[i][0] = 'done'
+            c = self.file_opener('a')
+            csv_a = csv.writer(c, delimiter =';', lineterminator = '\n')
+            for i in range(len(lista)):
+                csv_a.writerow(lista[i])
+            c.close()
+        else:
+            print('Unable to check: Index is out of bound')    
 ##### FILEFUNCTIONS ABOVE
 
     def loop(self):
@@ -81,7 +87,7 @@ class ToDoApp:
             print(' -c   Completes an task')
         elif len(self.mode) == 2:
             if self.mode[1] == '-l':
-                self.read_list()
+                self.display_list()
             elif self.mode[1] == '-a':
                 print('Unable to add: No task is provided')
             elif self.mode[1] == '-r':
@@ -90,8 +96,10 @@ class ToDoApp:
                 print('Unable to check: No index is provided')
             else:
                 print('Unsupported argument')
-        elif len(self.mode) == 3:
-            if self.mode[1] == '-a' and self.mode[2] !='':
+        elif len(self.mode) > 2:
+            if self.mode[1] == '-a' and self.mode[2] !='' and len(self.mode) > 2:
+                for i in range(3, len(self.mode)):
+                    self.mode[2] += ' ' + self.mode[i]
                 self.write_task(self.mode[2])
             elif self.mode[1] == '-r' and self.mode[2] !='':
                 try:
