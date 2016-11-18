@@ -13,3 +13,37 @@
 #
 # Create the class with MVC pattern in mind. It should get and store data in the model object
 # and it should pass the data to the view objects
+import model_robot
+import view_robot
+
+class Controller:
+
+    def __init__(self):
+        self.display = view_robot.Display()
+        self.robot = model_robot.Robot()
+        self.run = False
+        self.start()
+
+    def move(self, action):
+        if action.upper() == 'N':
+            self.robot.move_up()
+        elif action.upper() == 'S':
+            self.robot.move_down()
+        elif action.upper() == 'W':
+            self.robot.move_right()
+        elif action.upper() == 'E':
+            self.robot.move_left()
+        else:
+            print('Invalid commnad')
+
+    def loop(self):
+        while self.run:
+            action = input('Waiting for your instructions human!')
+            self.move(action)
+            self.display.show_position(self.robot.position_x, self.robot.position_y)
+
+    def start(self):
+        self.run = True
+        self.loop()
+
+belavagyok = Controller()
