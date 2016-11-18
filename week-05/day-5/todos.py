@@ -13,6 +13,8 @@ class ToDoApp:
             f = open(self.file_name, permission)
         except FileNotFoundError:
             f = open(self.file_name, 'a')
+            f.close()
+            f = open(self.file_name, permission)
         return f
     def csv_to_list(self):
             f = self.file_opener('r')
@@ -73,7 +75,7 @@ class ToDoApp:
                 csv_a.writerow(lista[i])
             c.close()
         else:
-            print('Unable to check: Index is out of bound')    
+            print('Unable to check: Index is out of bound')
 ##### FILEFUNCTIONS ABOVE
 
     def loop(self):
