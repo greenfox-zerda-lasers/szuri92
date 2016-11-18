@@ -1,6 +1,6 @@
 import csv
 import sys
-
+import os
 class ToDoApp:
 
     def __init__(self):
@@ -16,6 +16,7 @@ class ToDoApp:
             f.close()
             f = open(self.file_name, permission)
         return f
+
     def csv_to_list(self):
             f = self.file_opener('r')
             csv_f = csv.reader(f, delimiter = ';')
@@ -44,9 +45,11 @@ class ToDoApp:
             print('No todos toady! :)')
         for i in range(len(lista)):
             if lista[i][0] == 'done':
-                print( str( i + 1 ) + ' - [X] ' + lista[i][1])
+                #print( str( i + 1 ) + ' - [X] ' + lista[i][1])
+                print('{} - [X] {}'.format(i+1, lista[i][1]))
             else:
-                print( str( i + 1 ) + ' - [ ] ' + lista[i][1])
+                #print( str( i + 1 ) + ' - [ ] ' + lista[i][1])
+                print('{} - [ ] {}'.format(i+1, lista[i][1]))
 
 
     def delete(self, number):
@@ -80,6 +83,7 @@ class ToDoApp:
 
     def loop(self):
         if len(self.mode) <= 1:
+            os.system('cls' if os.name=='nt' else 'clear')
             print('Python Todo application')
             print('=======================\n')
             print('Command line arguments:')
@@ -89,6 +93,7 @@ class ToDoApp:
             print(' -c   Completes an task')
         elif len(self.mode) == 2:
             if self.mode[1] == '-l':
+                os.system('cls' if os.name=='nt' else 'clear')
                 self.display_list()
             elif self.mode[1] == '-a':
                 print('Unable to add: No task is provided')
