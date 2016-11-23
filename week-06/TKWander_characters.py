@@ -2,13 +2,22 @@ import random
 
 
 class Characters:
+
+    count = 0
+    @classmethod
+    def count_increment(cls):
+        cls.count += 1
+
     def __init__(self):
+        self.count_increment()
+        self.id = 'skeleton' + str(self.count)
         self.level = 1
         self.health_point = 2 * self.level * self.random_dice()
         self.defend_point = (self.level / 2) * self.random_dice()
         self.strike_point = self.level * self.random_dice()
         self.position_x = 0
         self.position_y = 0
+
 
     def random_dice(self):
         result = random.randint(1, 6)
