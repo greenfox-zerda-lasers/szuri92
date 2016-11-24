@@ -12,11 +12,18 @@ class Characters:
         self.count_increment()
         self.id = 'skeleton' + str(self.count)
         self.level = 1
-        self.health_point = 2 * self.level * self.random_dice()
+        self.max_health_point = 2 * (self.level + 1) * self.random_dice()
+        self.health_point = self.max_health_point
         self.defend_point = (self.level / 2) * self.random_dice()
         self.strike_point = self.level * self.random_dice()
         self.position_x = 0
         self.position_y = 0
+
+    def level_up_skel(self):
+        self.level += 1
+        self.max_health_point = 2 * (self.level + 1) * self.random_dice()
+        self.defend_point = (self.level / 2) * self.random_dice()
+        self.strike_point = self.level * self.random_dice()
 
 
     def random_dice(self):
@@ -43,18 +50,35 @@ class Hero(Characters):
 
     def __init__(self):
         super().__init__()
-        self.max_health_point = 20 + self.level * 3 * self.random_dice()
-        self.health_point = 20 + self.level * 3 * self.random_dice()
+        self.max_health_point = 1
+        self.health_point = self.max_health_point
         self.defend_point = 2 * self.level * self.random_dice()
         self.strike_point = 5 + self.level * self.random_dice()
+        self.key = 0
 
+    def key_collect(self):
+        self.key = 1
+
+    def level_up_hero(self):
+        self.level += 1
+        self.max_health_point = 20 + self.level * 3 * self.random_dice()
+        self.defend_point = 2 * self.level * self.random_dice()
+        self.strike_point = 5 + self.level * self.random_dice()
 
 class Boss(Characters):
     def __init__(self):
         super().__init__()
-        self.health_point = 2 * self.level * 2 * self.random_dice()
+        self.max_health_point = 20 + 3 * self.level * self.random_dice() + self.random_dice()
+        self.health_point = self.max_health_point
         self.defend_point = (self.level / 2) * self.random_dice() + (self.random_dice()/2)
-        self.strike_point = self.level * self.random_dice() + self.level
+        self.strike_point = self.level * self.random_dice() + (self.level+1)
+
+    def level_up_boss(self):
+        self.level += 1
+        self.max_health_point = 20 + 3 * self.level * self.random_dice() + self.random_dice()
+        self.health_point = self.max_health_point
+        self.defend_point = (self.level / 2) * self.random_dice() + (self.random_dice()/2)
+        self.strike_point = self.level * self.random_dice() + (self.level+1)
 
 """
 valami2 = Characters()

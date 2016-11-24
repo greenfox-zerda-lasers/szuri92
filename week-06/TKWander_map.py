@@ -1,7 +1,7 @@
 class GameMap:
 
     def __init__(self):
-        self.game_field = [[0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+        self.game_field1 = [[0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
                            [0, 0, 0, 1, 0, 1, 0, 1, 1, 0],
                            [0, 1, 1, 1, 0, 1, 0, 1, 1, 0],
                            [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
@@ -13,7 +13,28 @@ class GameMap:
                            [0, 0, 0, 1, 0, 1, 1, 0, 1, 0],
                            [0, 1, 0, 1, 0, 1, 0, 0, 0, 0]]
 
+        self.game_field2 = [[0, 1, 0, 1, 0, 1, 0, 0, 0, 0],
+                           [0, 0, 1, 1, 0, 1, 0, 1, 1, 0],
+                           [0, 1, 1, 1, 0, 1, 0, 1, 1, 0],
+                           [0, 1, 0, 1, 0, 1, 0, 0, 0, 0],
+                           [1, 0, 0, 1, 0, 1, 1, 1, 1, 0],
+                           [0, 1, 0, 1, 0, 0, 0, 0, 1, 0],
+                           [0, 1, 0, 1, 0, 1, 1, 0, 1, 0],
+                           [0, 1, 1, 1, 0, 1, 1, 0, 1, 0],
+                           [0, 1, 1, 1, 0, 0, 0, 0, 1, 0],
+                           [0, 0, 0, 1, 0, 1, 1, 0, 1, 0],
+                           [0, 1, 0, 1, 0, 1, 0, 0, 0, 0]]
 
+        self.game_fields = [self.game_field1, self.game_field2]
+
+
+        self.map_number = 1
+
+    def get_next_map(self):
+        self.map_number += 1
 
 valami = GameMap()
-print(valami.game_field[10][7])
+#print(valami.game_field[10][7])
+valami.get_next_map()
+valami.get_next_map()
+print(valami.map_number)

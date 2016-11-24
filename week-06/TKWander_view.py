@@ -21,7 +21,8 @@ class GameDisplay:
         self.canvas = Canvas(self.root, height = self.canvas_height, width = self.canvas_width, bg = 'black')
         self.hero = -10
         self.boss = -11
-        #self.skeleton = -12
+        self.text = -23
+        self.enemy_text = None
         self.canvas.pack()
 
     def resize(self, img_path, width, height):
@@ -29,17 +30,18 @@ class GameDisplay:
         resized_image = image.resize((width, height), Image.ANTIALIAS)
         return ImageTk.PhotoImage(resized_image)
 
-    def draw_map(self, game_field, hero_hp, hero_dp, hero_sp):
+    def draw_map(self, game_field):
         for i in range(10):
             for j in range(11):
                 if game_field[j][i] == 0:
                     self.canvas.create_image(i*self.resize_value, j*self.resize_value, anchor=NW, image = self.resized_floor)
                 else:
                     self.canvas.create_image(i*self.resize_value, j*self.resize_value, anchor=NW, image = self.resized_wall)
-        self.draw_status_bar(hero_hp, hero_dp, hero_sp)
 
-    def draw_status_bar(self, hero_hp, hero_dp, hero_sp):
-        self.canvas.create_text(275, 620, fill='white', font="Times 12 bold",  text="Stats: HP: {}  DP: {}  SP: {}".format(hero_hp, hero_dp, hero_sp))
+
+    def draw_status_bar(self, hero_lvl, hero_max, hero_hp, hero_dp, hero_sp, hero_key, map_lev):
+        self.canvas.delete(self.text)
+        self.text = self.canvas.create_text(275, 620, fill='white', font="Times 12 bold",  text="Hero  ( Level {} )   HP: {}/{}   | DP: {}   | SP: {}   | key {}     | Map:         {}".format(hero_lvl, hero_max ,hero_hp, hero_dp, hero_sp, hero_key, map_lev))
 
     def show_hero_front(self, position_x, position_y):
         self.canvas.delete(self.hero)
@@ -64,3 +66,10 @@ class GameDisplay:
     def show_skeleton(self, position_x, position_y, skel_id):
         #self.canvas.delete(self.skeleton)
         self.skeleton = self.canvas.create_image(position_x*self.resize_value, position_y*self.resize_value, anchor =NW, image = self.resized_skeleton, tag = skel_id)
+
+    def show_game_over(self):
+        self.text2 = self.canvas.create_text(200, 200, fill = 'tomato', font = 'Times 100 bold', text = "Game\n Over!" )
+
+    def show_enemy_stat(self, enemy_hp, enemy_sp, enemy_dp):
+        self.canvas.delete(self.enemy_text)
+        self.enemy_text = self.canvas.create_text(275, 620, fill='white', font="Times 12 bold",  text="Enemy HP: {}/{}  | DP: {}  | SP:  {}".format(enemy_hp, enemy_sp, enemy_dp))
