@@ -7,17 +7,18 @@ class GameDisplay:
     def __init__(self):
         self.resize_value = 55
         self.root = Tk()
-        self.canvas_width = 800
+        self.canvas_width = 1000
         self.canvas_height =900
-        self.resized_floor = self.resize("C:/Users/Gáspár/Desktop/floor.png", self.resize_value, self.resize_value)
+        self.resized_floor = self.resize("C:/Users/Gáspár/Desktop/Tk_wander/b-floor.gif", self.resize_value, self.resize_value)
         #self.resized_floor = self.resize("floor.png", self.resize_value, self.resize_value)
-        self.resized_hero_front = self.resize("C:/Users/Gáspár/Desktop/hero_front.png", self.resize_value, self.resize_value)
-        self.resized_hero_right = self.resize("C:/Users/Gáspár/Desktop/hero-right.png", self.resize_value, self.resize_value)
-        self.resized_hero_left = self.resize("C:/Users/Gáspár/Desktop/hero-left.png", self.resize_value, self.resize_value)
-        self.resized_hero_back = self.resize("C:/Users/Gáspár/Desktop/hero-back.png", self.resize_value, self.resize_value)
-        self.resized_wall = self.resize("C:/Users/Gáspár/Desktop/wall.png", self.resize_value, self.resize_value)
-        self.resized_boss = self.resize("C:/Users/Gáspár/Desktop/boss.png", self.resize_value, self.resize_value)
-        self.resized_skeleton = self.resize("C:/Users/Gáspár/Desktop/skeleton.png", self.resize_value, self.resize_value)
+        self.resized_hero_front = self.resize("C:/Users/Gáspár/Desktop/Tk_wander/c3po_front.gif", self.resize_value, self.resize_value)
+        self.resized_hero_right = self.resize("C:/Users/Gáspár/Desktop/Tk_wander/c3po_right.gif", self.resize_value, self.resize_value)
+        self.resized_hero_left = self.resize("C:/Users/Gáspár/Desktop/Tk_wander/c3po_left.gif", self.resize_value, self.resize_value)
+        self.resized_hero_back = self.resize("C:/Users/Gáspár/Desktop/Tk_wander/c3po_back.png", self.resize_value, self.resize_value)
+        self.resized_wall = self.resize("C:/Users/Gáspár/Desktop/Tk_wander/b-wall.gif", self.resize_value, self.resize_value)
+        self.resized_boss = self.resize("C:/Users/Gáspár/Desktop/Tk_wander/lord_veder.png", self.resize_value, self.resize_value)
+        self.resized_skeleton = self.resize("C:/Users/Gáspár/Desktop/Tk_wander/stormtroop.png", self.resize_value, self.resize_value)
+        self.resized_logo =  self.resize("C:/Users/Gáspár/Desktop/Tk_wander/logo.png", 400, 500)
         self.canvas = Canvas(self.root, height = self.canvas_height, width = self.canvas_width, bg = 'black')
         self.hero = -10
         self.boss = -11
@@ -73,3 +74,6 @@ class GameDisplay:
     def show_enemy_stat(self, enemy_hp, enemy_sp, enemy_dp):
         self.canvas.delete(self.enemy_text)
         self.enemy_text = self.canvas.create_text(275, 620, fill='white', font="Times 12 bold",  text="Enemy HP: {}/{}  | DP: {}  | SP:  {}".format(enemy_hp, enemy_sp, enemy_dp))
+
+    def game_logo(self):
+        self.canvas.create_image(550, 20, anchor = NW, image = self.resized_logo)

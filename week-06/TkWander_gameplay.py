@@ -12,6 +12,7 @@ class Control:
         self.boss = TKWander_characters.Boss()
         self.step_count =  0
         self.draw_game_map()
+        self.view.game_logo()
         self.draw_status()
         self.view.canvas.focus_set()
         self.start_game()
@@ -161,7 +162,7 @@ class Control:
     def start_game(self):
         self.hero.key = 0
         self.hero.position_x = 0
-        self.hero.position_x = 0
+        self.hero.position_y = 0
         self.view.show_hero_front(0, 0)
         self.draw_boss(9, 0)
         self.generate_skeletons()
