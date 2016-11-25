@@ -59,7 +59,7 @@ class Control:
             self.game_over()
         self.draw_status()
         if self.boss.health_point < 0:
-            self.draw_boss(-2, -2)
+            self.view.canvas.delete(self.view.boss)
         else:
             hero_sv = self.hero.strike_point + 2 * self.hero.random_dice()
             boss_sv = self.boss.strike_point + 2 * self.boss.random_dice()
@@ -128,6 +128,18 @@ class Control:
                     self.skeletons[i].position_y += movement_y
                     valid = True
 
+    def move_boss(self):
+        valid = False
+        while valid == False:
+            movement = random.choice([[0, 1], [1, 0], [-1, 0], [0, -1]])
+            movement_x = movement[0]
+            movement_y = movement[1]
+            if self.move_validator(self.boss.position_x+movement_x, self.boss.position_y+movement_y) == True:
+                self.boss.position_x += movement_x
+                self.boss.position_y += movement_y
+                valid = True
+
+
     def hero_up(self, event):
         if self.move_validator(self.hero.position_x, self.hero.position_y-1) == True:
             self.hero.move_up()
@@ -135,7 +147,10 @@ class Control:
         self.step_count +=  1
         if self.step_count % 2 == 0:
             self.move_skeletons()
+            self.move_boss()
             self.draw_skeletons()
+            if self.boss.health_point > 0:
+                self.view.show_boss(self.boss.position_x, self.boss.position_y)
 
     def hero_down(self, event):
         if self.move_validator(self.hero.position_x, self.hero.position_y+1) == True:
@@ -144,7 +159,10 @@ class Control:
         self.step_count +=  1
         if self.step_count % 2 == 0:
             self.move_skeletons()
+            self.move_boss()
             self.draw_skeletons()
+            if self.boss.health_point > 0:
+                self.view.show_boss(self.boss.position_x, self.boss.position_y)
 
     def hero_right(self, event):
         if self.move_validator(self.hero.position_x+1, self.hero.position_y) == True:
@@ -153,7 +171,10 @@ class Control:
         self.step_count +=  1
         if self.step_count % 2 == 0:
             self.move_skeletons()
+            self.move_boss()
             self.draw_skeletons()
+            if self.boss.health_point > 0:
+                self.view.show_boss(self.boss.position_x, self.boss.position_y)
 
     def hero_left(self, event):
         if self.move_validator(self.hero.position_x-1, self.hero.position_y) == True:
@@ -162,7 +183,10 @@ class Control:
         self.step_count +=  1
         if self.step_count % 2 == 0:
             self.move_skeletons()
+            self.move_boss()
             self.draw_skeletons()
+            if self.boss.health_point > 0:
+                self.view.show_boss(self.boss.position_x, self.boss.position_y)
 #******************************Game Start*********************************************
 
     def start_game(self):

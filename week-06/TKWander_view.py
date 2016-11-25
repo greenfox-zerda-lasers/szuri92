@@ -21,7 +21,7 @@ class GameDisplay:
         self.resized_logo =  self.resize("C:/Users/Gáspár/Desktop/Tk_wander/logo.png", 400, 500)
         self.canvas = Canvas(self.root, height = self.canvas_height, width = self.canvas_width, bg = 'black')
         self.hero = -10
-        self.boss = -11
+        self.boss = None
         self.text = -23
         self.enemy_text = None
         self.canvas.pack()
