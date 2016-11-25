@@ -69,11 +69,11 @@ class GameDisplay:
         self.skeleton = self.canvas.create_image(position_x*self.resize_value, position_y*self.resize_value, anchor =NW, image = self.resized_skeleton, tag = skel_id)
 
     def show_game_over(self):
-        self.text2 = self.canvas.create_text(200, 200, fill = 'tomato', font = 'Times 100 bold', text = "Game\n Over!" )
+        self.text2 = self.canvas.create_text(300, 250, fill = 'Red', font = 'Times 100 bold', text = "Game\n Over!")
 
     def show_enemy_stat(self, enemy_hp, enemy_sp, enemy_dp):
         self.canvas.delete(self.enemy_text)
         self.enemy_text = self.canvas.create_text(275, 620, fill='white', font="Times 12 bold",  text="Enemy HP: {}/{}  | DP: {}  | SP:  {}".format(enemy_hp, enemy_sp, enemy_dp))
 
     def game_logo(self):
-        self.canvas.create_image(550, 20, anchor = NW, image = self.resized_logo)
+        self.canvas.create_image(550, 50, anchor = NW, image = self.resized_logo)

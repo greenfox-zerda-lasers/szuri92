@@ -8,6 +8,7 @@ class Control:
         self.view = TKWander_view.GameDisplay()
         self.map = TKWander_map.GameMap()
         self.skeletons =[]
+        self.random_map = []
         self.hero = TKWander_characters.Hero()
         self.boss = TKWander_characters.Boss()
         self.step_count =  0
@@ -18,11 +19,6 @@ class Control:
         self.start_game()
 
 #***********************GENERATE ENEMIES****************************************
-    #def generate_boss(slef):
-    #    self.boss = TKWander_characters.Boss()
-    #   self.boss.position_x = 9
-    #    self.boss.position_y = 0
-
 
     def generate_skeletons(self):
         skel_number = random.randint(2, 5)
@@ -32,9 +28,10 @@ class Control:
             skeleton.position_y = random.randint(0, 11)
             if self.move_validator(skeleton.position_x, skeleton.position_y) == True and (skeleton.position_x != 0 or skeleton.position_y !=0) and (skeleton.position_x != self.boss.position_x or skeleton.position_y != self.boss.position_y):
                 self.skeletons.append(skeleton)
+            for skeleton in self.skeletons:
+                skeleton.level_up_skel()
 
-
-#**************************EVENTS***********************************************
+#**************************KEY EVENTS***********************************************
 
     def keybind_events(self):
         self.view.canvas.bind('<w>', self.hero_up)
@@ -44,13 +41,23 @@ class Control:
         self.view.canvas.bind('<space>', self.lets_fight)
         self.view.canvas.bind('<q>', self.go_next_level)
         self.view.canvas.bind('<r>', self.do_nothing)
+
+
+    def  dead_keybind_events(self):
+        self.view.canvas.bind('<w>', self.do_nothing)
+        self.view.canvas.bind('<s>', self.do_nothing)
+        self.view.canvas.bind('<a>', self.do_nothing)
+        self.view.canvas.bind('<d>', self.do_nothing)
+        self.view.canvas.bind('<space>', self.do_nothing)
+        self.view.canvas.bind('<q>', self.do_nothing)
+        self.view.canvas.bind('<r>', self.restart_game)
+
 #*********************************FIGHT*****************************************
 
     def hero_vs_boss(self):
         if self.hero.health_point <= 0:
             self.game_over()
         self.draw_status()
-        print(self.hero.key, self.boss.health_point)
         if self.boss.health_point < 0:
             self.draw_boss(-2, -2)
         else:
@@ -65,6 +72,7 @@ class Control:
     def hero_vs_skeleton(self):
         if self.hero.health_point <= 0:
             self.game_over()
+        self.draw_status()
         skel_i = self.battle_coord_validator()
         if self.skeletons[skel_i].health_point < 0:
             skeleton_id = self.skeletons[skel_i].id
@@ -93,6 +101,8 @@ class Control:
     def go_next_level(self, event):
         if self.hero.key > 0 and self.boss.health_point <= 0:
             self.map.get_next_map()
+            self.random_map = []
+            self.draw_game_map()
             self.hero.key = 0
             for skeleton in self.skeletons:
                 self.view.canvas.delete(skeleton.id)
@@ -126,7 +136,6 @@ class Control:
         if self.step_count % 2 == 0:
             self.move_skeletons()
             self.draw_skeletons()
-        #print(self.battle_coord_validator())
 
     def hero_down(self, event):
         if self.move_validator(self.hero.position_x, self.hero.position_y+1) == True:
@@ -136,7 +145,6 @@ class Control:
         if self.step_count % 2 == 0:
             self.move_skeletons()
             self.draw_skeletons()
-        #print(self.battle_coord_validator())
 
     def hero_right(self, event):
         if self.move_validator(self.hero.position_x+1, self.hero.position_y) == True:
@@ -146,7 +154,6 @@ class Control:
         if self.step_count % 2 == 0:
             self.move_skeletons()
             self.draw_skeletons()
-        #print(self.battle_coord_validator())
 
     def hero_left(self, event):
         if self.move_validator(self.hero.position_x-1, self.hero.position_y) == True:
@@ -156,7 +163,6 @@ class Control:
         if self.step_count % 2 == 0:
             self.move_skeletons()
             self.draw_skeletons()
-        #print(self.battle_coord_validator())
 #******************************Game Start*********************************************
 
     def start_game(self):
@@ -169,12 +175,24 @@ class Control:
         self.draw_skeletons()
         self.keybind_events()
 
+    def restart_game(self, event):
+        self.view.canvas.delete(self.view.text2)
+        self.hero.health_point = self.hero.max_health_point
+        self.draw_status()
+        self.start_game()
+
+    def game_over(self):
+        self.view.show_game_over()
+        self.dead_keybind_events()
+
 #************************DRAWING SECTION*****************************************
+
     def draw_status(self):
         self.view.draw_status_bar(self.hero.level, self.hero.max_health_point, self.hero.health_point, self.hero.defend_point, self.hero.strike_point, self.hero.key, self.map.map_number)
 
     def draw_game_map(self):
-        self.view.draw_map(self.map.game_field1)
+        self.random_map = random.choice([self.map.game_field1, self.map.game_field2, self.map.game_field3])
+        self.view.draw_map(self.random_map)
 
     def draw_skeletons(self):
             for skeleton in self.skeletons:
@@ -189,7 +207,7 @@ class Control:
 #*****************************VALIDATORS****************************************
     def move_validator(self, position_x, position_y):
         if position_x in range(0, 10) and position_y in range(0, 11):
-            if self.map.game_field1[position_y][position_x] != 1:
+            if self.random_map[position_y][position_x] != 1:
                 return True
         return False
 
@@ -200,31 +218,11 @@ class Control:
         else:
             for i in range(len(self.skeletons)):
                 if self.hero.position_x == self.skeletons[i].position_x and self.hero.position_y == self.skeletons[i].position_y:
-                    #self.view.show_enemy_stat(self.skeletons[i].health_point, self.skeletons[i].defend_point, self.skeletons[i].strike_point)
                     result = i
                     return result
 
-    def game_over(self):
-        self.view.show_game_over()
-        self.dead_keybind_events()
-
-    def  dead_keybind_events(self):
-        self.view.canvas.bind('<w>', self.do_nothing)
-        self.view.canvas.bind('<s>', self.do_nothing)
-        self.view.canvas.bind('<a>', self.do_nothing)
-        self.view.canvas.bind('<d>', self.do_nothing)
-        self.view.canvas.bind('<space>', self.do_nothing)
-        self.view.canvas.bind('<q>', self.do_nothing)
-        self.view.canvas.bind('<r>', self.restart_game)
-
     def do_nothing(self, event):
         pass
-
-    def restart_game(self, event):
-        self.view.canvas.delete(self.view.text2)
-        self.hero.health_point = self.hero.max_health_point
-        self.draw_status()
-        self.start_game()
 
 valami = Control()
 valami.view.canvas.mainloop()
