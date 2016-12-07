@@ -7,7 +7,6 @@ class Player:
         self.name = ''
         self.life = 6
 
-
 class Game:
     def __init__(self, player):
         self.guess_list = []
@@ -60,7 +59,6 @@ class Game:
             self.player.life -= 1
             print(texts.guessing['wrong'].format(self.player.life))
 
-
     def letter_guess(self):
         self.talalt = 0
         if self.hidden == self.word:
@@ -70,10 +68,11 @@ class Game:
         else:
             guess = str(input(texts.guessing["aguess"]))
             guess = guess.upper()
-            if guess in self.guess_list:
-                print(texts.game_loop['already_letter'].format(guess))
-            else:
-                self.letter_swap(guess)
+            if len(guess) == 1:
+                if guess in self.guess_list:
+                    print(texts.game_loop['already_letter'].format(guess))
+                else:
+                    self.letter_swap(guess)
             self.hidden = ''.join(self.hidden)
             self.word = ''.join(self.word)
 
@@ -87,12 +86,12 @@ class Game:
             print("|             ")
             print("|             ")
         elif self.player.life == 5:
-            print( "________      ")
-            print( "|      |      ")
-            print( "|      0      ")
-            print( "|             ")
-            print( "|             ")
-            print( "|             ")
+            print("________      ")
+            print("|      |      ")
+            print("|      0      ")
+            print("|             ")
+            print("|             ")
+            print("|             ")
         elif self.player.life == 4:
             print("________      ")
             print("|      |      ")
@@ -129,23 +128,19 @@ class Game:
             print ("|     / \     ")
             print ("|             ")
 
-
-
     def restart_game(self):
         while not self.game_running:
             print(texts.game_loop['new_game'])
-            answer = str(input('(Y)es or (N)o?'))
+            answer = str(input('Y/N?\n'))
+            if len(answer) <= 0:
+                answer = 'y'
             if answer.lower() == 'y':
                 self.start_game()
             elif answer.lower() == 'n':
-                print('Bye then')
-                break # END OF GAME
+                print('Thanks for the game, cya!')
+                break
             else:
                 print("Say Yes or No you fag!")
-
-
-
-
 
 player = Player()
 hangman_game = Game( player )
