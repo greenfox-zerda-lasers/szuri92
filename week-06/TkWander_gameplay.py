@@ -201,6 +201,7 @@ class Control:
 
     def restart_game(self, event):
         self.view.canvas.delete(self.view.text2)
+        self.map.map_number = 1
         self.hero.health_point = self.hero.max_health_point
         self.draw_status()
         self.start_game()
