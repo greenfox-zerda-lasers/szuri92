@@ -12,22 +12,18 @@ def five_most_frequent():
             all_num.append(row[len(row)-i])
             i += 1
     count = Counter(all_num)
-    #print(count)
-
+    print(count)
     most_common = count.most_common()
-    #print(most_common)
+    print(most_common)
     top_five = []
     i = 0
     while i < 5:
         top_five.append(most_common[i])
         i += 1
 
-
     table = PrettyTable(["number", "frequency"])
     for i in range(len(top_five)):
         table.add_row(top_five[i])
-
     return table
-
 
 print(five_most_frequent())
