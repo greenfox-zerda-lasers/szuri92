@@ -13,9 +13,9 @@ function writeMynumber(number) {
       }
     }
   } else {
-    return numberString[6]
+    return numberString[6];
   }
 }
 
 
-console.log(writeMynumber(4))
+console.log(writeMynumber(4));

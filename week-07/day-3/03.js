@@ -11,6 +11,6 @@ function each(myArr, fun) {
   });
 }
 
-var anArray = [1, 2, 3, 4, 5, 6, 7, 8]
+var anArray = [1, 2, 3, 4, 5, 6, 7, 8];
 
-each(anArray, console.log)
+each(anArray, console.log);

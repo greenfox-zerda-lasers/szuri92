@@ -5,7 +5,7 @@
 // that is the string 'apple'
 
 function apply(func) {
-  func('apple')
+  func('apple');
 }
 
-apply(console.log) // should log apple
+apply(console.log); // should log apple
