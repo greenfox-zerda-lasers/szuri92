@@ -1,8 +1,8 @@
 from tkinter import *
 import time
 import math
-root = Tk()
 
+root = Tk()
 size = 400
 height = math.sqrt(size **2 - (size/2)**2)
 canvas = Canvas(root, width = 1000, height = 1000, bg = 'silver')
@@ -10,7 +10,7 @@ canvas.pack()
 
 def draw_poly(x, y, size, height):
     height = math.sqrt(size **2 - (size/2)**2)
-    time.sleep(0.0001)
+    time.sleep(0.000001)
     canvas.create_polygon(x, y, x+size, y, x+3/2*size,
                           y+height, x+size, y+2*height,
                           x, y+2*height, x-0.5*size, y+height,
