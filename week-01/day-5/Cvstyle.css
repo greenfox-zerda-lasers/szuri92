@@ -49,7 +49,11 @@ background-color: rgb(68,68,68);
 font-family: 'Abril Fatface', cursive;
 color: white;
 font-size: 30px;
-text-align: center;
+
 margin-top: 50px;
-padding: 10px 0px 10px 0px;
+padding: 0px 0px 10px 0px;
+}
+
+.quote span {
+  position: 2px 2px;
 }

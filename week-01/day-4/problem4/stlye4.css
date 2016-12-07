@@ -1,0 +1,19 @@
+h1, h2 {
+  color: green;
+}
+body {
+  margin-left: 40px;
+}
+
+#L {
+  color: rgb(210,20,10);
+}
+
+#set {
+  color: blue;
+  font-style: italic;
+}
+
+pre {
+  font-family: fantasy;
+}
