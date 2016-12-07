@@ -7,7 +7,6 @@
 from tkinter import *
 
 root = Tk()
-
 canvas = Canvas(root, width='300', height='300')
 canvas.pack()
 
@@ -15,10 +14,7 @@ def drawing(coord_x, coord_y):
     length = 50
     canvas.create_rectangle(coord_x, coord_y, coord_x + length, coord_y + length)
 
-
-
 drawing(30, 30)
 drawing(100, 60)
 drawing(140, 90)
-
 root.mainloop()

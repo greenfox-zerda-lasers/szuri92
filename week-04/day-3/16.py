@@ -18,16 +18,12 @@ def generate_color():
 canvas = Canvas(root, width='300', height='300', bg='black')
 canvas.pack()
 
-
-
-for i in range(0, 150):
+for i in range(0, 100):
     x = randint(0, 300)
     y = randint(0, 300)
     color = '#'
     color_number = randint(0, 9)
     color += str(color_number) * 3
-    canvas.create_rectangle(x, y, x+3, y+3, fill=color)
-    time.sleep(0.05)
-    canvas.update()
+    canvas.create_rectangle(x, y, x+5, y+5, fill=color)
 
 root.mainloop()

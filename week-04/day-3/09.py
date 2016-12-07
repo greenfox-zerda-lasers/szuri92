@@ -3,7 +3,7 @@
 # the square size
 # and draws a square of that size to the center of the canvas.
 # draw 3 squares with that function
-"""
+
 from tkinter import *
 
 root = Tk()
@@ -13,8 +13,8 @@ canvas.pack()
 
 ### draw color rect
 ##def draw_rect(size, color):
-##    canvas.create_rectangle(150-size/2, 150-size/2 ,150+size/2 ,150+size/2, fill=color)
-"""
+##canvas.create_rectangle(150-size/2, 150-size/2 ,150+size/2 ,150+size/2, fill=color)
+
 def draw_rect(size):
     canvas.create_rectangle(150-size/2, 150-size/2 ,150+size/2 ,150+size/2)
 
@@ -22,7 +22,7 @@ def draw_rect(size):
 ##draw_rect(200, 'blue')
 ##draw_rect(150, 'red')
 ##draw_rect(100, 'green')
-"""
+
 draw_rect(200)
 draw_rect(150)
 draw_rect(100)
@@ -30,4 +30,3 @@ draw_rect(100)
 
 
 root.mainloop()
-"""

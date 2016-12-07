@@ -7,18 +7,13 @@
 from tkinter import *
 
 root = Tk()
-
 canvas = Canvas(root, width='300', height='300')
 canvas.pack()
 
 def drawing(coord_x, coord_y):
     canvas.create_line(coord_x, coord_y, coord_x+50, coord_y)
 
-
-for i in range(0, 4):
+for i in range(4):
     drawing(i*30, i*50)
-
-
-
 
 root.mainloop()
