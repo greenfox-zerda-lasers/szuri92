@@ -11,7 +11,8 @@ class TestMyFunctions(unittest.TestCase):
         self.assertFalse(anagramm('lajos', 'Llojas'))
     def test_if_int_false(self):
         self.assertRaises(AttributeError, anagramm, 'lajos', 15)
-
+    def test_anagramm_with_empy_string(self):
+        self.assertTrue(anagramm('', ''), True)
 
     def test_if_count_upper_letter(self):
         self.assertEqual(count_letters('BElLLLaaA'), ({'b' : 1, 'e': 1, 'l' : 4, 'a': 3}))
