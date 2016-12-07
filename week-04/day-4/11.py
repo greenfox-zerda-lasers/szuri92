@@ -8,7 +8,7 @@ canvas = Canvas(root, width = size, height = size, bg = 'yellow')
 canvas.pack()
 
 def draw_rect(x, y, size):
-    time.sleep(1)
+    time.sleep(0.01)
     canvas.create_rectangle(x, y, x+size, y+size, width='2')
     canvas.update()
     if size > 20:
@@ -16,9 +16,6 @@ def draw_rect(x, y, size):
         draw_rect(x+(size*(2/3)), y+size/3, size/3)
         draw_rect(x+size/3, y, size/3)
         draw_rect(x+size/3, y+(size*(2/3)), size/3)
-
-
-
 
 draw_rect(0, 0, 600)
 

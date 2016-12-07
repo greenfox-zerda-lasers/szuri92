@@ -9,5 +9,4 @@ def list_add(lista):
     else:
         return  lista[0] + list_add(lista[1:])
 
-
 print(list_add([1, 2, [3, 4], 1, [1, [2, 4]]]))
