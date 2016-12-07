@@ -1,6 +1,5 @@
 import random
 
-
 class Characters:
 
     count = 0
@@ -11,7 +10,7 @@ class Characters:
     def __init__(self):
         self.count_increment()
         self.id = 'skeleton' + str(self.count)
-        self.level = 0
+        self.level = 1
         self.max_health_point = 2 * (self.level + 1) * self.random_dice()
         self.health_point = self.max_health_point
         self.defend_point = (self.level / 2) * self.random_dice()
@@ -24,7 +23,6 @@ class Characters:
         self.max_health_point = 2 * (self.level + 1) * self.random_dice()
         self.defend_point = (self.level / 2) * self.random_dice()
         self.strike_point = self.level * self.random_dice()
-
 
     def random_dice(self):
         result = random.randint(1, 6)
