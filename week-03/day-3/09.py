@@ -11,7 +11,4 @@ def triangle(line):
     for i in range(0, line+1):
         print(i*'*')
 
-
-
-
-triangle(123)
+triangle(23)

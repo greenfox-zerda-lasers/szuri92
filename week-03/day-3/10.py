@@ -11,8 +11,6 @@
 
 def tree(line):
     for i in range(0, line+1):
-        print((i+1)*' '+(i*1)*'*')
-
-
+        print((line-i)*' '+(i*2+1)*'*')
 
 tree(12)
