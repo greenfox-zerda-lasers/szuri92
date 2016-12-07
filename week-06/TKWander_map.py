@@ -41,9 +41,3 @@ class GameMap:
 
     def get_next_map(self):
         self.map_number += 1
-
-valami = GameMap()
-#print(valami.game_field[10][7])
-valami.get_next_map()
-valami.get_next_map()
-print(valami.map_number)
