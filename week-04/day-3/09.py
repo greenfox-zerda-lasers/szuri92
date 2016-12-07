@@ -7,7 +7,6 @@
 from tkinter import *
 
 root = Tk()
-
 canvas = Canvas(root, width='300', height='300', bg='orange')
 canvas.pack()
 
@@ -17,7 +16,6 @@ canvas.pack()
 
 def draw_rect(size):
     canvas.create_rectangle(150-size/2, 150-size/2 ,150+size/2 ,150+size/2)
-
 
 ##draw_rect(200, 'blue')
 ##draw_rect(150, 'red')
