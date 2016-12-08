@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+</head>
+<body>
+  <h1>Original Content</h1>
+  <p>Some more text</p>
+  <p class="other">Even more text</p>
+  <p class="result">Here comes something new</p>
+
+  <script>
+    var heading = document.querySelector("h1");
+    console.log(heading);
+    //window.alert(heading.innerHTML);   // 1. Alert the content of the heading.
+
+    var firstPar = document.querySelector("p");
+    console.log(firstPar.innerHTML);   // 2. Write the content of the first paragraph to the console.
+
+    var secondPar = document.getElementsByClassName("other")[0];
+    console.log(secondPar);
+    //window.alert(secondPar.innerHTML); // 3. Alert the content of the second paragraph.
+
+    heading.innerHTML = "New Content"// 4. Replace the heading's content with 'New content'.
+
+    var lastPar = document.querySelector(".result");// 5. Replace the last paragraph's content with the first paragraph's content.
+    //lastPar.innerHTML = firstPar.innerHTML
+
+  </script>
+  <!-- <script src="content-1.js"></script> -->
+</body>
+</html>
