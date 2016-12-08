@@ -22,11 +22,14 @@
     newLL.textContent = 'The Lamplighter';
     asteroids.appendChild(newLL);
     // Add a heading saying 'I can add elements to the DOM!' to the .container.
-    // Add an image, any image, to the container.
     var container = document.querySelector(".container");
     var newHeading = document.createElement('h1');
     newHeading.textContent = 'I can add elements to the DOM!';
+    // Add an image, any image, to the container.
+    var newPicture = document.createElement('img');
+    newPicture.setAttribute('src', 'http://deji.chez.com/dessins/pp1.gif');
     container.appendChild(newHeading);
+    container.appendChild(newPicture);
   </script>
   <!--<script src="createelement-1.js"></script>-->
 </body>
