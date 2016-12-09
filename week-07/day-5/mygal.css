@@ -1,0 +1,120 @@
+body {
+    padding-top: 100px;
+    background-color: #c6c6c6;
+    background:linear-gradient(to right, #c6c6c6 0%, #fff 50%, #c6c6c6 100%);
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+.container {
+  margin: auto;
+  background: rgba(128, 32, 123, .3);
+  display: flex;
+  height: 350px;
+  overflow: hidden;
+  width: 800px;
+  justify-content: space-between;
+  box-shadow: 0 1px 1px 1px #bbb;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.4em;
+  margin-top: 2px;
+  margin-bottom: 1px;
+ }
+
+p {
+  font-size: 0.8em;
+  color: #b6b6b6;
+  margin: 0 2px;
+  display:block;
+}
+
+.main {
+  box-sizing: content-box;
+  width : 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  background-size: cover;
+  transition: 1.3s;
+  padding-top: 200px;
+}
+
+.description {
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Aref Ruqaa', serif;
+  word-spacing: 1.5px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, .5);
+  height: 33%;
+  padding: 10px;
+}
+
+.container button {
+  font-family: 'Patua One', cursive;
+  font-size: 40px;
+  color : #4e4e4e;
+  width : 40px;
+}
+
+nav {
+  text-align: center;
+}
+
+.navigation .pic  {
+  box-sizing: border-box;
+  padding: 10px;
+  width : 70px;
+  height: 70px;
+  background-color: #fff;
+  display : inline-block;
+  border: 1px solid #ababab;
+  border-radius: 3px;
+  padding: 4px;
+  box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.75);
+
+}
+
+#pic1, #pic2, #pic3, #pic4, #pic5 {
+  height : 100%;
+  width : 100%;
+  border-radius: 3px;
+}
+
+#pic1 {
+  background-image: url(http://www.irishtimes.com/polopoly_fs/1.2280664.1436543517!/image/image.jpg_gen/derivatives/box_620_330/image.jpg);
+}
+
+#pic2 {
+  background-image: url(http://i.dailymail.co.uk/i/pix/2015/12/29/19/2FAB3E6100000578-3377927-Andrew_Suryono_Bali_I_was_taking_pictures_of_some_Orangutans_in_-a-42_1451416773881.jpg);
+}
+
+#pic3 {
+  background-image: url(http://www.popsci.com/sites/popsci.com/files/styles/large_1x_/public/images/2016/05/hubbleheader.png?itok=BSsBG9gD&fc=50,50);
+}
+
+#pic4 {
+  background-image: url(http://www.telegraph.co.uk/content/dam/news/2016/05/17/98223710_marmoset-large_trans++eo_i_u9APj8RuoebjoAHt0k9u7HhRJvuo-ZLenGRumA.jpg);
+}
+
+#pic5 {
+  background-image: url(http://www.telegraph.co.uk/content/dam/news/2016/10/06/110549255_DUNSTABLE%20UNITED%20KINGDOM%20-%20OCTOBER%2006%20Close%20up%20shots%20of%20the%20reticulated%20giraffe%20at%20ZSL%20Whi-large_trans++wRnwQ0KgCqCTKamrqQKaYn-5rYAcEMfZ-k6qzXXxMMM.jpg);
+}
+
+.pic:hover {
+  transform: translateY(-5px);
+  transition: 0.2s;
+  box-shadow: 0px 15px 20px -5px rgba(0,0,0,0.75);
+}
+
+.main:hover {
+  padding-top: 0px;
+  transition: 0.5s;
+}
+
+#not_working {
+  color : #c0c0c0;
+}
