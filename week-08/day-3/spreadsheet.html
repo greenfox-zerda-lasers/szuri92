@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+  <script>
+  var xmr = new XMLHttpRequest();
+  xmr.open("POST", "https://sheetsu.com/apis/v1.0/7654fbe24554", true);
+  //xmr.send();
+  //xmr.onreadystatechange = ready;
+  var form = {
+    MovieTitle: "Barátok közt",
+    Rating: "1",
+    Username: "Szuri"
+  }
+
+  xmr.setRequestHeader("Content-Type", "application/json");
+  xmr.send(JSON.stringify(form));
+  // function ready(resp) {
+  //   if(xmr.readyState === XMLHttpRequest.DONE) {
+  //     console.log(JSON.parse(xmr.response));
+  //   }
+  // }
+
+
+
+
+  </script>
+</body>
+</html>

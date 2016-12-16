@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+
+  <script>
+    var myBody = document.querySelector('body');
+    var myGiphy;
+    let httpRequest = new XMLHttpRequest();
+    httpRequest.open('GET', 'http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=16', true); // Also try http://444.hu/feed
+    httpRequest.send(null);
+    httpRequest.onreadystatechange = ready;
+
+    function ready (rsp) {
+			if( httpRequest.readyState === XMLHttpRequest.DONE ) {
+				myGiphy = JSON.parse(httpRequest.response)
+        for(let i = 0; i < myGiphy.data.length; i++) {
+          var myImg = document.createElement('img')
+          myImg.setAttribute('src', myGiphy.data[i]['images']['original_still']['url'])
+          myBody.appendChild(myImg);
+        }
+        img = document.querySelectorAll('img');
+        for(let i = 0; i < myGiphy.data.length; i++) {
+          img[i].addEventListener('mouseover', function(){
+            changeImagestoGif(i);
+          });
+          img[i].addEventListener('mouseout', function(){
+            changeGiftoImage(i);
+          });
+        }
+        console.log(img[1]['src'])
+
+			}
+		}
+
+    function changeImagestoGif(i){
+      img[i].setAttribute('src', myGiphy.data[i]['images']['original']['url'])
+    }
+
+    function changeGiftoImage(i){
+      img[i].setAttribute('src', myGiphy.data[i]['images']['original_still']['url'])
+    }
+
+
+
+  </script>
+
+</body>
+</html>

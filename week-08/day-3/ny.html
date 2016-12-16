@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+  <ul>
+  </ul>
+  <style>
+    a {
+      display:block;
+    }
+  </style>
+  <script>
+  // Built by LucyBot. www.lucybot.com
+    var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=ecf5a7de7cc04cb2b96621ac0933ae26&q=apollo+11+moon";
+    let xmr = new XMLHttpRequest();
+    xmr.open('GET', url, true); // Also try http://444.hu/feed
+    xmr.send(null);
+    xmr.onreadystatechange = ready;
+
+    function addElements(elem1, elem2, elem3) {
+    var liElem =  document.createElement('li');
+    var head1 = document.createElement('h1');
+    var con1 = document.createElement('p');
+    var con2 = document.createElement('p');
+
+    head1.innerText = elem1;
+    con1.innerText = elem2;
+    con2.innerText = elem3;
+
+    liElem.appendChild(head1);
+    liElem.appendChild(con1);
+    liElem.appendChild(con2);
+
+    document.querySelector('ul').appendChild(liElem);
+    }
+
+
+
+    function ready() {
+			if( xmr.readyState === XMLHttpRequest.DONE ) {
+			 var myArticles = JSON.parse(xmr.response).response.docs;
+       myArticles.forEach(function(e){
+         addElements(e.headline.main, e.snippet, e.pub_date);
+        });
+      }
+    }
+  </script>
+</body>
+</html>
