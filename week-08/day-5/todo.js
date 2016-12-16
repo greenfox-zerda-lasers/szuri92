@@ -59,7 +59,6 @@ function changeData(data, bol, id) {
 }
 
 addItem.addEventListener('click', function(){
-  play('audio2');
   getInputText();
   postData();
   getData();
@@ -93,12 +92,6 @@ function completeTask() {
 document.addEventListener('DOMContentLoaded', function(){
   getData();
   showAllTask();
-  play('audio3')
 });
-
-function play(id){
-    let audio = document.getElementById(id);
-    audio.play();
-}
 
 setInterval(getData, 2000);
