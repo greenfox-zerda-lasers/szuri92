@@ -1,6 +1,6 @@
-'use strict';
+ 'use strict';
 
-var musicSrcList = ['music/Calibre.mp3', 'music/Calyx.mp3', 'music/CoD.mp3', 'music/grafix.mp3', 'music/Logist.mp3', 'music/wfl.mp3'];
+var musicSrcList = ['music/Calibra.mp3', 'music/Calyxa.mp3', 'music/CoDa.mp3', 'music/grafixa.mp3', 'music/Logista.mp3', 'music/wfla.mp3'];
 
 var musicList = [{'Artist': 'Calibre', 'title': 'Mr Majestic'},
                  {'Artist': 'Calyx and Tebee', 'title': 'Takes one to know one'},
@@ -9,7 +9,7 @@ var musicList = [{'Artist': 'Calibre', 'title': 'Mr Majestic'},
                  {'Artist': 'Logistics', 'title': '2999'},
                  {'Artist': 'Delta Heavy', 'title': 'White Flag VIP'}];
 
-var musicPic = ['url("music/calibrepic.jpg")', 'url("music/ctb.jpg")', 'url("music/dheavy.jpg")', 'url("music/fredv.jpg")', 'url("music/logistics.jpeg")', 'url("music/dheavy.jpg")'];                 
+var musicPic = ['url("music/calibrepic.jpg")', 'url("music/ctb.jpg")', 'url("music/dheavy.jpg")', 'url("music/fredv.jpg")', 'url("music/logistics.jpeg")', 'url("music/dheavy.jpg")'];
 var myAudio = document.querySelector('audio');
 
 function createTrackList () {
