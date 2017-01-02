@@ -1,0 +1,132 @@
+.container {
+  width: 700px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  box-shadow: 0px 2px 4px 1px #c9c9c9;
+  font-family: sans-serif;
+  border-radius: 2px;
+}
+/* ***************************PLAYLIST*******************************/
+.playlist_logo {
+display: flex;
+height: 140px;
+height: 35%;
+justify-content: space-between;
+}
+
+.logo {
+width: 60%;
+padding: 10px 5px 0 10px;
+display: flex;
+flex-flow: column;
+justify-content: space-between;
+}
+
+.playlists_add {
+display: flex;
+justify-content: space-between;
+padding-right: 5px;
+}
+
+.add_button {
+  background-image: url("add.svg");
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  color: black;
+}
+
+.playlist_list {
+  height: 65%;
+}
+
+.img_pic{
+  width: 40%;
+  background-image: url("music-placeholder.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+p{
+  font-size: 18px;
+  color: #4c4f52;
+  margin: 2px;
+}
+
+.Playlist{
+  width: 50%;
+}
+
+.music {
+  height: 100%;
+  display: flex;
+  background-color: #f5f5f5;
+  border-radius: 5px 5px 0 0;
+}
+
+.playlist {
+  display: flex;
+  flex-flow: column;
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+  border-radius: 5px 0 0 0;
+}
+/* ***********************TRACKS***************************/
+.tracks {
+width: 50%;
+border-radius: 0 5px 0 0;
+display: flex;
+flex-flow: column;
+}
+
+h2 {
+  margin: 0;
+  color: #555555;
+  font-size: 20px;
+}
+
+.tracks p {
+  color: #a9a9a9;
+  font-size: 16px;
+}
+
+.trackshead{
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+}
+
+ol {
+  margin: 0;
+}
+
+li {
+  color: #555555;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+li:nth-child(odd) {
+padding: 10px 0;
+background-color: #EAEAEA;
+}
+
+li:nth-child(even) {
+padding: 10px 0;
+background-color: #f5f5f5;
+}
+
+audio {
+  width: 100%;
+}
+
+li:hover {
+  background-color: #ABE7e5;
+  cursor: pointer;
+}
+
+#playing{
+background-color: #ABE7E5;
+}
