@@ -1,15 +1,26 @@
  'use strict';
 
+ // var wavesurfer = WaveSurfer.create({
+ //     container: '#waveform',
+ //     waveColor: '#b4b4b4',
+ //     progressColor: '#ABE7E5',
+ //     width: '50%'
+ // });
+ //
+ //
+ // wavesurfer.load('music/Calyxa.mp3');
+
+
 var musicSrcList = ['music/Calibra.mp3', 'music/Calyxa.mp3', 'music/CoDa.mp3', 'music/grafixa.mp3', 'music/Logista.mp3', 'music/wfla.mp3'];
 
-var musicList = [{'Artist': 'Calibre', 'title': 'Mr Majestic'},
-                 {'Artist': 'Calyx and Tebee', 'title': 'Takes one to know one'},
-                 {'Artist': 'Delta Heavy', 'title': 'City of dreams'},
-                 {'Artist': 'Fred V & Grafix', 'title': 'Every little word'},
-                 {'Artist': 'Logistics', 'title': '2999'},
-                 {'Artist': 'Delta Heavy', 'title': 'White Flag VIP'}];
+var musicList = [{'Artist': 'Glude', 'title': 'Identity'},
+                 {'Artist': 'Different Heaven', 'title': 'Safe And Sound'},
+                 {'Artist': 'Floatinurboat', 'title': 'Spirit of Things'},
+                 {'Artist': 'Ahrix', 'title': 'Nova'},
+                 {'Artist': 'Warriyo', 'title': 'Mortals (feat. Laura Brehm)'},
+                 {'Artist': 'Cartoon', 'title': 'C U Again'}];
 
-var musicPic = ['url("music/calibrepic.jpg")', 'url("music/ctb.jpg")', 'url("music/dheavy.jpg")', 'url("music/fredv.jpg")', 'url("music/logistics.jpeg")', 'url("music/dheavy.jpg")'];
+var musicPic = ['url("music/calibrepic.jpg")', 'url("music/ctb.jpg")', 'url("music/dheavy.jpg")', 'url("music/fredv.jpg")', 'url("music/logistics.jpg")', 'url("music/dheavy.jpg")'];
 var myAudio = document.querySelector('audio');
 
 function createTrackList () {

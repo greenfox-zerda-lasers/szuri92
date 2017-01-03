@@ -1,0 +1,14 @@
+{
+  "name": "musicplayer",
+  "version": "1.0.0",
+  "description": "music",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "music"
+  ],
+  "author": "",
+  "license": "ISC"
+}
