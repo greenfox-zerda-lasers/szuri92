@@ -1,10 +1,17 @@
+body{
+  background: linear-gradient(135deg, rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%);
+  height: 560px;
+  padding-top: 100px;
+}
+
+
 .container {
   width: 700px;
   height: 400px;
   display: flex;
   flex-direction: column;
   margin: auto;
-  box-shadow: 0px 2px 4px 1px #c9c9c9;
+  box-shadow: 0px 2px 4px 1px #f9f9f9;
   font-family: sans-serif;
   border-radius: 2px;
 }
@@ -12,7 +19,7 @@
 .playlist_logo {
 display: flex;
 height: 140px;
-height: 35%;
+height: 45%;
 justify-content: space-between;
 }
 
@@ -38,11 +45,21 @@ padding-right: 5px;
   color: black;
 }
 
+.add_button:hover{
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+
 .playlist_list {
-  height: 65%;
+  height: 66%;
 }
 
 .playlist_list p {
+  box-sizing: border-box;
+  display: block;
+  height: 40px;
   padding: 10px;
   margin: 0;
 }
@@ -52,12 +69,19 @@ padding-right: 5px;
   background: #EAEAEA;
 }
 
+.playlist_list p:hover {
+  background-color: #FFC938;
+  cursor: pointer;
+}
+
+
 
 .img_pic{
-  width: 40%;
+  width: 50%;
   background-image: url("music/calibrepic.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  transition: 1s;
 }
 
 p{
@@ -105,7 +129,9 @@ h2 {
 }
 
 .trackshead{
-  padding: 10px 20px;
+  box-sizing: border-box;
+  height: 70.150px;
+  padding: 10px;
   background-color: #f5f5f5;
   display: flex;
   justify-content: space-between;
@@ -115,21 +141,21 @@ ol {
   margin: 0;
 }
 
-li {
+.single_track {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 13px 0;
+  padding-left: 10px;
   color: #555555;
   font-weight: 600;
   font-size: 13px;
 }
 
-li:nth-child(odd) {
-padding: 10px 0;
-padding-left: 10px;
+.single_track:nth-child(odd) {
 background-color: #EAEAEA;
 }
 
-li:nth-child(even) {
-padding: 10px 0;
-padding-left: 10px;
+.single_track:nth-child(even) {
 background-color: #f5f5f5;
 }
 
@@ -137,13 +163,13 @@ audio {
   width: 100%;
 }
 
-li:hover {
-  background-color: #ABE7e5;
+.single_track:hover {
+  background-color: #FFC938;
   cursor: pointer;
 }
 
 #playing{
-background-color: #ABE7E5;
+background-color: #FFC938;
 }
 
 #waveform {

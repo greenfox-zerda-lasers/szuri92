@@ -1,16 +1,5 @@
  'use strict';
 
- // var wavesurfer = WaveSurfer.create({
- //     container: '#waveform',
- //     waveColor: '#b4b4b4',
- //     progressColor: '#ABE7E5',
- //     width: '50%'
- // });
- //
- //
- // wavesurfer.load('music/Calyxa.mp3');
-
-
 var musicSrcList = ['music/Calibra.mp3', 'music/Calyxa.mp3', 'music/CoDa.mp3', 'music/grafixa.mp3', 'music/Logista.mp3', 'music/wfla.mp3'];
 
 var musicList = [{'Artist': 'Glude', 'title': 'Identity'},
@@ -27,18 +16,19 @@ function createTrackList () {
   let myimg = document.querySelector('.img_pic');
   let myh2 = document.querySelector('h2');
   let myp = document.querySelector('.tracks p');
-  let myOl = document.querySelector('ol');
+  let myTracks = document.querySelector('.tracklist');
   for (let i = 0; i < musicSrcList.length; i++) {
-    var myLi = document.createElement('li');
-    myLi.innerText = musicList[i]['title'] + ' (' + musicList[i]['Artist'] + ')';
-    myOl.append(myLi);
+    var track = document.createElement('div');
+    track.setAttribute('class', 'single_track');
+    track.innerText = i + ' : '  + musicList[i]['title'] + ' (' + musicList[i]['Artist'] + ')';
+    myTracks.appendChild(track);
   }
-  let allLi = document.querySelectorAll('li');
-  allLi.forEach(function(e, i){
+  let alltracks = document.querySelectorAll('.single_track');
+  alltracks.forEach(function(e, i){
     e.addEventListener('click', function(e){
       myAudio.setAttribute('src', musicSrcList[i]);
-      removeId(allLi);
-      allLi[i].setAttribute('id', 'playing');
+      removeId(alltracks);
+      alltracks[i].setAttribute('id', 'playing');
       myh2.innerText = musicList[i]['title'];
       myp.innerText = musicList[i]['Artist'];
       myimg.style.backgroundImage = musicPic[i];
