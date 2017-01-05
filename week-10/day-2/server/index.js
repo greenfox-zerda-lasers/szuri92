@@ -48,3 +48,11 @@ app.get('/playlis-tracks/', function (req, res) {
 
 
 module.exports = app;
+
+app.get('/playlists-tracks', function (req, res){
+  res.send();
+});
+
+app.get('/playlists-tracks/:playlist_id', function (req, res){
+  res.send();
+});

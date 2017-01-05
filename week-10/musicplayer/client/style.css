@@ -1,0 +1,240 @@
+body{
+  background: linear-gradient(135deg, rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%);
+  height: 560px;
+  padding-top: 100px;
+}
+
+
+.container {
+  width: 1050px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  box-shadow: 0px 2px 4px 1px #f9f9f9;
+  font-family: sans-serif;
+  border-radius: 2px;
+}
+/* ***************************PLAYLIST*******************************/
+.playlist_logo {
+display: flex;
+height: 140px;
+height: 45%;
+justify-content: space-between;
+}
+
+.logo {
+width: 60%;
+padding: 10px 5px 0 10px;
+display: flex;
+flex-flow: column;
+justify-content: space-between;
+}
+
+.playlists_add {
+display: flex;
+justify-content: space-between;
+padding-right: 5px;
+}
+
+.add_button {
+  background-image: url("add.svg");
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  color: black;
+}
+
+.add_button:hover{
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+
+.playlist_list {
+  height: 66%;
+}
+
+.playlist_list p {
+  box-sizing: border-box;
+  display: block;
+  height: 40px;
+  padding: 10px;
+  margin: 0;
+}
+
+
+.playlist_list p:nth-child(odd) {
+  background: #EAEAEA;
+}
+
+.playlist_list p:hover {
+  background-color: #FFC938;
+  cursor: pointer;
+}
+
+
+
+.img_pic{
+  width: 50%;
+  background-image: url("music/calibrepic.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 1s;
+}
+
+p{
+  font-size: 18px;
+  color: #4c4f52;
+  margin: 2px;
+}
+
+.Playlist{
+  width: 50%;
+}
+
+.music {
+  height: 100%;
+  display: flex;
+  background-color: #f5f5f5;
+  border-radius: 5px 5px 0 0;
+}
+
+.playlist {
+  display: flex;
+  flex-flow: column;
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+  border-radius: 5px 0 0 0;
+}
+/* ***********************TRACKS***************************/
+.tracks {
+width: 50%;
+border-radius: 0 5px 0 0;
+display: flex;
+flex-flow: column;
+}
+
+h2 {
+  margin: 0;
+  color: #555555;
+  font-size: 16px;
+}
+
+.tracks p {
+  color: #a9a9a9;
+  font-size: 16px;
+}
+
+.trackshead{
+  box-sizing: border-box;
+  height: 70.150px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+}
+
+ol {
+  margin: 0;
+}
+
+.single_track {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 13px 0;
+  padding-left: 10px;
+  color: #555555;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.tracklist {
+  overflow-y: scroll;
+}
+
+.single_track:nth-child(odd) {
+background-color: #EAEAEA;
+}
+
+.single_track:nth-child(even) {
+background-color: #f5f5f5;
+}
+
+audio {
+  width: 100%;
+}
+
+.single_track:hover {
+  background-color: #FFC938;
+  cursor: pointer;
+}
+
+#playing{
+background-color: #FFC938;
+}
+
+#waveform {
+  width: 700px;
+  margin: auto;
+}
+
+.add {
+  background-image: url("add.svg");
+  height: 16px;
+  width: 16px;
+  background-size: cover;
+  margin: 10px;
+}
+
+.rate {
+  background-image: url("star.svg");
+  height: 20px;
+  width: 20px;
+  background-size: cover;
+}
+
+.current_buttons {
+  display: flex;
+  align-items: center;
+}
+
+::-webkit-slider-runnable-track {
+  background: linear-gradient(to bottom, rgba(245,245,245,1) 40%, #FFC938 50%,rgba(245,245,245,1) 60%);
+}
+
+input {
+  margin: 5px;
+
+}
+
+#mycanvas {
+  padding: 10px;
+}
+
+button {
+  color: #555555;
+  height: 30px;
+  border: none;
+  background: linear-gradient(135deg, rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%);
+  padding: 1px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bolder;
+  box-shadow: inset 0px 0px 3px 1px #555555;
+}
+
+button:hover {
+  box-shadow: 0px 0px 3px 1px #555555;
+  cursor: pointer;
+}
+
+
+input div {
+  width: 20px;
+  background-color: red;
+  border: none;
+  border-radius: 30px;
+}
