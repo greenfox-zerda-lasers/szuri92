@@ -3,13 +3,6 @@
 
 var vacationModule = (function () {
 
-var testArr = [{name: 'u', dep: ''},
-              {name: 'v', dep: 'w'},
-              {name: 'w', dep: 'z'},
-              {name: 'x', dep: 'u'},
-              {name: 'y', dep: 'v'},
-              {name: 'z', dep: ''}];
-
 var createArray = function (obj) {
    var result = [];
    result.push(obj.dep, obj.name);
@@ -44,7 +37,6 @@ var createDestination = function(listOfObj) {
 }
 
 return {
-  testArr: testArr,
   createArray: createArray,
   insertItem: insertItem,
   createDestination: createDestination
@@ -52,5 +44,4 @@ return {
 
 })();
 
-console.log(vacationModule.createDestination(vacationModule.testArr));
 module.exports = vacationModule;
