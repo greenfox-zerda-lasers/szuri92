@@ -1,6 +1,17 @@
 // alpha version, trying with {name: 'x', dep: 'y'} objects;
+'use strict';
+var testarr2 = [{name: 'x', dep: ''},
+               {name: 'y', dep: 'z'},
+               {name: 'z', dep: ''}]
 
 var vacationModule = (function () {
+
+var testArr = [{name: 'u', dep: ''},
+              {name: 'v', dep: 'w'},
+              {name: 'w', dep: 'z'},
+              {name: 'x', dep: 'u'},
+              {name: 'y', dep: 'v'},
+              {name: 'z', dep: ''}];
 
 var createArray = function (obj) {
    var result = [];
@@ -17,17 +28,33 @@ var insertItem = function (array, item, index) {
 var createDestination = function(listOfObj) {
   var destination = [];
   for (var i = 0; i < listOfObj.length; i++) {
-    if (destination.indexOf(listOfObj[i].name) === -1 && destination.indexOf[i].depende)
-    var depArray = createArray(listOfObj[i]);
-    destination.push(depArray[1], depArray[0]);
+    console.log(destination);
+    if (listOfObj[i].dep === '' && destination.indexOf(listOfObj[i].name) === -1) {
+      destination.push(listOfObj[i].name);
+    } else if (listOfObj[i].dep === '' && destination.indexOf(listOfObj[i].name) > -1) {
+      continue;
+    }
+    else if (destination.indexOf(listOfObj[i].name) === -1 && destination.indexOf(listOfObj[i].dep) === -1) {
+      var depArray = createArray(listOfObj[i]);
+      destination.push(depArray[0], depArray[1]);
+    } else if (destination.indexOf(listOfObj[i].name) > -1 && destination.indexOf(listOfObj[i].dep) === -1) {
+        insertItem(destination, listOfObj[i].dep, destination.indexOf(listOfObj[i].name));
+    } else if (destination.indexOf(listOfObj[i].name) === -1 && destination.indexOf(listOfObj[i].dep) > -1) {
+        insertItem(destination, listOfObj[i].name, destination.indexOf(listOfObj[i].dep));
+    }
   }
+  return destination;
 }
 
 return {
+  testArr: testArr,
   createArray: createArray,
-  insertItem: insertItem
+  insertItem: insertItem,
+  createDestination: createDestination
 };
 
 })();
 
+//console.log(vacationModule.createDestination(vacationModule.testArr));
+console.log(vacationModule.createDestination(testarr2));
 module.exports = vacationModule;
