@@ -1,8 +1,5 @@
 // alpha version, trying with {name: 'x', dep: 'y'} objects;
 'use strict';
-var testarr2 = [{name: 'x', dep: ''},
-               {name: 'y', dep: 'z'},
-               {name: 'z', dep: ''}]
 
 var vacationModule = (function () {
 
@@ -40,7 +37,7 @@ var createDestination = function(listOfObj) {
     } else if (destination.indexOf(listOfObj[i].name) > -1 && destination.indexOf(listOfObj[i].dep) === -1) {
         insertItem(destination, listOfObj[i].dep, destination.indexOf(listOfObj[i].name));
     } else if (destination.indexOf(listOfObj[i].name) === -1 && destination.indexOf(listOfObj[i].dep) > -1) {
-        insertItem(destination, listOfObj[i].name, destination.indexOf(listOfObj[i].dep));
+        insertItem(destination, listOfObj[i].name, destination.indexOf(listOfObj[i].dep) + 1);
     }
   }
   return destination;
@@ -55,6 +52,5 @@ return {
 
 })();
 
-//console.log(vacationModule.createDestination(vacationModule.testArr));
-console.log(vacationModule.createDestination(testarr2));
+console.log(vacationModule.createDestination(vacationModule.testArr));
 module.exports = vacationModule;
